@@ -11,5 +11,5 @@
     @foreach ($viewmhs as $item)
     <li> {{ $item['npm'] }} - 
     {{ $item["nama"] }}</li>
-@endforeach
+    @endforeach
 </ul>
