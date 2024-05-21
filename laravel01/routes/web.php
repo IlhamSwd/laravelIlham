@@ -29,7 +29,7 @@ Route::get('listdata', function () {
     $list = ["Sistem Informasi", "Informatika", "Manajemen"];
     $listmhs = [
         ["npm" => 001, "nama" => "Ilham"],
-        ["npm" => 002, "nama" => "Swan"]
+        ["npm" => 002, "nama" => "Swan"]    
     ];
     return view('listprodi')
         ->with('viewlist', $list)
