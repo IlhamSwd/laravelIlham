@@ -9,8 +9,11 @@
               <div class="card-body">
                 <h4 class="card-title">Fakultas</h4>
                 <p class="card-description">
-                  List Data Fakultas
+                  List Data Fakultas  
                 </p>
+                {{-- Tombol tambah --}}
+                <a href="{{ route('fakultas.create') }}" class="btn btn-rounded btn-primary">Tambah</a>
+                
                 <div class="table-responsive">
                   <table class="table">
                     <thead>

@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();  // id integer autoincrement (1, 2, 3, dst)
             $table->string('nama', 45);
             $table->string('singkatan', 4);
-            $table->timestamps(); // created_at dan updated_at
+            $table->timestamps(); // created_at dan updated_at  
         });
-    }
+        }
 
     /**
      * Reverse the migrations.
