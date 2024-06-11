@@ -90,7 +90,11 @@
                     align: 'left'
                 },
                 xAxis: {
-                    categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
+                    categories: [
+                        @foreach($mahasiswaprodi as $item)
+                            ' {{ $item->nama}} ',
+                        @endforeach
+                    ],
                     crosshair: true,
                     accessibility: {
                         description: 'Countries'
@@ -111,19 +115,23 @@
                         borderWidth: 0
                     }
                 },
-                series: [
+                series: [ //jumlah grafik
                     {
-                        name: 'Corn',
-                        data: [406292, 260000, 107000, 68300, 27500, 14500]
-                    },
-                    {
-                        name: 'Wheat',
-                        data: [51086, 136000, 5500, 141000, 107180, 77000]
+                        name: 'Mahasiswa',
+                        data: [
+                            @foreach($mahasiswaprodi as $item)
+                             {{ $item->jumlah }},
+                            @endforeach
+                        ]
                     }
+                    // {
+                    //     name: 'Wheat',
+                    //     data: [51086, 136000, 5500, 141000, 107180, 77000]
+                    // }
                 ]
                 });
 
             </script>
-        </div>
+        </div>  
     </div>
 @endsection
