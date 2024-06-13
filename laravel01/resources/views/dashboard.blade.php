@@ -15,11 +15,9 @@
             <figure class="highcharts-figure">
                 <div id="container"></div>
                 <p class="highcharts-description">
-                    A basic column chart comparing estimated corn and wheat production
-                    in some countries.
+                   Ini adalah sebuah grafik mahasiswa yang menampilkan banyak nya mahasiswa yang ada di program studi.
 
-                    The chart is making use of the axis crosshair feature, to highlight
-                    the hovered country.
+                    Program studi sendiri adalah tempat atau sesuatu instansi yang berisikan mahasiswa didalamnya.  
                 </p>
             </figure>
 
