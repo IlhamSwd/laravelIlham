@@ -5,17 +5,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Spica Admin</title>
+    <title>login</title>
     <!-- base:css -->
-    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{ url('vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ url('vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <link rel="shortcut icon" href="{{ url('images/favicon.png') }}" />
 </head>
 
 <body>
@@ -30,7 +30,8 @@
                             </div>
                             <h4>Welcome back!</h4>
                             <h6 class="font-weight-light">Happy to see you again!</h6>
-                            <form class="pt-3">
+                            <form class="pt-3" method="POST" action="{{ route('login') }}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Username</label>
                                     <div class="input-group">
@@ -39,8 +40,10 @@
                                                 <i class="mdi mdi-account-outline text-primary"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control form-control-lg border-left-0"
-                                            id="exampleInputEmail" placeholder="Username">
+                                        <input type="text" class="form-control form-control-lg border-left-0" id="email" name="email" placeholder="Username">
+                                        @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -51,8 +54,11 @@
                                                 <i class="mdi mdi-lock-outline text-primary"></i>
                                             </span>
                                         </div>
-                                        <input type="password" class="form-control form-control-lg border-left-0"
-                                            id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" class="form-control form-control-lg border-left-0"id="password" name="password" placeholder="Password">
+                                        @error('password')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                            
                                     </div>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
@@ -65,8 +71,7 @@
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>
                                 <div class="my-3">
-                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                                        href="../../index.html">LOGIN</a>
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                                 </div>
                                 <div class="mb-2 d-flex">
                                     <button type="button" class="btn btn-facebook auth-form-btn flex-grow mr-1">
@@ -94,12 +99,12 @@
     </div>
     <!-- container-scroller -->
     <!-- base:js -->
-    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <script src="{{ url('vendors/js/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="../../js/off-canvas.js"></script>
-    <script src="../../js/hoverable-collapse.js"></script>
-    <script src="../../js/template.js"></script>
+    <script src="{{ url('js/off-canvas.js') }}"></script>
+    <script src="{{ url('js/hoverable-collapse.js') }}"></script>
+    <script src="{{ url('js/template.js') }}"></script>
     <!-- endinject -->
 </body>
 
