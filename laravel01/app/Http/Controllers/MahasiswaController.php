@@ -41,8 +41,7 @@ class MahasiswaController extends Controller
     {
     
         // return $request;
-        if ($request->user()->cannot('create',
-        Mahasiswa::class)) {
+        if ($request->user()->cannot('create', Mahasiswa::class)) {
             abort(403);
         }
 
@@ -97,9 +96,13 @@ class MahasiswaController extends Controller
     public function update(Request $request, Mahasiswa $mahasiswa)
     {
         // dd($request)
-        if (auth()->user->cannot('update', $mahasiswa)) {
+        // if (auth()->user()->cannot('update', $mahasiswa)) {
+        //     abort(403);
+        // }
+
+        if (auth()->user()->cannot('update', $mahasiswa)) {
             abort(403);
-    }
+        }
 
         if($request->url_foto) { //jika ada file foto yang dilampirkan
             $val = $request->validate([
@@ -146,8 +149,8 @@ class MahasiswaController extends Controller
     public function destroy(Mahasiswa $mahasiswa)
     {
         // dd($mahasiswa);
-        if (auth()->user->cannot('delete', $mahasiswa)) {
-                abort(403);
+        if (auth()->user()->cannot('delete', $mahasiswa)) {
+            abort(403);
         }
         File::delete('foto/'. $mahasiswa['url_foto']);
         $mahasiswa->delete(); //hapus data mahasiswa

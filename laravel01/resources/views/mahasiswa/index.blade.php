@@ -4,7 +4,6 @@
 
 @section('content')
     <div class="row">
-        </ul>
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -27,7 +26,7 @@
                                     <th class="text-center">Tanggal lahir</th>
                                     <th class="text-center">Alamat</th>
                                     <th class="text-center">Prodi</th>
-                                    <th class="text-center">SAKSI</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,13 +82,13 @@
             var name = $(this).data("name");
             event.preventDefault();
             Swal.fire({
-                    title: "Yakin mau ngapus?" + name,
-                    text: "Setelah di hapus kenape!",
+                    title: "Yakin mau ngapus?",
+                    text: "Setelah di hapus akan hilang ini!",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
+                    confirmButtonText: "Ya, Hapus!"
                 })
                 .then((willDelete) => {
                     if (willDelete.isConfirmed) {
