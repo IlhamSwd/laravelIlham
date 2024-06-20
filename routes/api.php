@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::get('fakultas', [FakultasController::class, 'index']);
+// Route::post('fakultas', [FakultasController::class, 'store']);
