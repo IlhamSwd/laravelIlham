@@ -13,8 +13,8 @@
               Formulir Tambah Mahasiswa
             </p>
             <form method="POST" action="{{ route('mahasiswa.store')}}" class ="forms-sample" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
+              @csrf
+              <div class="form-group">
                 <label for="nama">NPM</label>
                 <input type="char" class="form-control" name="npm" value="{{ old('npm')}}" placeholder="Npm">
                 @Error('npm')
@@ -37,7 +37,7 @@
               </div>
               <div class="form-group">
                 <label for="date">Tanggal lahir</label>
-                <input type="date" name="tanggal_lahir" id="" >
+                <input type="date" name="tanggal_lahir" id="tanggal_lahir" value="{{ old('tanggal_lahir')}}" placeholder="tanggal_lahir">
                 @Error('tanggal_lahir')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -49,22 +49,22 @@
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
-            <div class="form-group">
-              <label for="prodi_id">Prodi</label>
-              <select name="prodi_id" id="prodi_id" class="form-control">
-                @foreach ($prodi as $item)
-                  <option value="{{ $item['id'] }}">
-                    {{ $item['nama']}}
-                  </option>
-                @endforeach
-              </select>
-              @Error('prodi_id')
-                <span class="text-danger">{{$message}}</span>
-              @enderror
-            </div>
+              <div class="form-group">
+                <label for="prodi_id">Prodi</label>
+                <select name="prodi_id" id="prodi_id" class="form-control" name="prodi_id" value="{{ old('prodi_id')}}" placeholder="masukan prodi">
+                  @foreach ($prodi as $item)
+                    <option value="{{ $item['id'] }}">
+                      {{ $item['nama']}}
+                    </option>
+                  @endforeach
+                </select>
+                @Error('prodi_id')
+                  <span class="text-danger">{{$message}}</span>
+                @enderror
+              </div>
               <div class="form-group">
                 <label for="url_foto">Url Foto</label>
-                <input type="file" class="form-control" name="url_foto">
+                <input type="file" class="form-control" name="url_foto" name="url_foto" value="{{ old('url_foto')}}" placeholder="Masukan Foto">
                 @Error('url_foto')
                     <span class="text-danger">{{$message}}</span>
                 @enderror

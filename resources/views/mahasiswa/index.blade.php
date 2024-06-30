@@ -46,8 +46,8 @@
                                                     @csrf
                                                     <button type="submit"
                                                         class="btn btn-sm btn-rounded btn-danger show_confirm"
-                                                        data-name={{ $item['nama'] }}>Hapus</button>
-                                                        
+                                                        data-name={{ $item['nama'] }}>Hapus
+                                                    </button>
                                                 </form>
                                             @endcan
                                             @can('update', $item)

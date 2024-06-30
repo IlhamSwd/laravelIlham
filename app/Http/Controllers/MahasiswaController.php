@@ -18,7 +18,7 @@ class MahasiswaController extends Controller
             $mahasiswa = Mahasiswa::where('user_id', auth()->user()->id)->get();
             //select * from mahasiswas where user_id = 1
         } else {
-            $mahasiswa = Mahasiswa::all();
+            $mahasiswa = Mahasiswa::all();  
         }
 
         return view('mahasiswa.index')
@@ -128,10 +128,10 @@ class MahasiswaController extends Controller
                 'tempat_lahir' => "required", 
                 'tanggal_lahir' => "required", 
                 'alamat' => "required", 
-                'prodi_id' => "required",
+                'prodi_id' => "required"
                 // 'url_foto' => "required|file|mimes:png,jpg|max:5000"
             ]);
-       
+            
         }
 
         // simpan tabel fakultas
