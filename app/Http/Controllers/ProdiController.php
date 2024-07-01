@@ -34,8 +34,7 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->user()->cannot('create',
-        Prodi::class)) {
+        if ($request->user()->cannot('create', Prodi::class)) {
             abort(403);
         }
 
@@ -47,7 +46,7 @@ class ProdiController extends Controller
 
         Prodi::create($val);
 
-        return redirect()->route('prodi.index')->with('success',$val['nama'].' berhasil disimpan');
+        return redirect()->route('prodi.index')->with('success',$val['nama']. ' berhasil disimpan');
     }
 
     /**

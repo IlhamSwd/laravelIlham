@@ -66,7 +66,7 @@ class MahasiswaController extends Controller
         Mahasiswa::create($val);
 
         // // radirect ke halaman list fakultas
-        return redirect()->route('mahasiswa.index')->with('success', $val['nama'], 'berhasil disimpan');
+        return redirect()->route('mahasiswa.index')->with('success', $val['nama']. 'berhasil disimpan');
 
     }
 
@@ -138,7 +138,7 @@ class MahasiswaController extends Controller
         Mahasiswa::where('id', $mahasiswa['id'])->update($val);
 
         // // radirect ke halaman list fakultas
-        return redirect()->route('mahasiswa.index')->with('success', $val['nama'], 'berhasil diubah');
+        return redirect()->route('mahasiswa.index')->with('success', $val['nama']. ' berhasil diubah');
 
     }
 
