@@ -100,9 +100,9 @@ class MahasiswaController extends Controller
         //     abort(403);
         // }
 
-        if (auth()->user()->cannot('update', $mahasiswa)) {
-            abort(403);
-        }
+        // if (auth()->user()->cannot('update', $mahasiswa)) {
+        //     abort(403);
+        // }
 
         if($request->url_foto) { //jika ada file foto yang dilampirkan
             $val = $request->validate([
@@ -149,9 +149,10 @@ class MahasiswaController extends Controller
     public function destroy(Mahasiswa $mahasiswa)
     {
         // dd($mahasiswa);
-        if (auth()->user()->cannot('delete', $mahasiswa)) {
-            abort(403);
-        }
+        // if (auth()->user()->cannot('delete', $mahasiswa)) {
+        //     abort(403);
+        // }
+        
         File::delete('foto/'. $mahasiswa['url_foto']);
         $mahasiswa->delete(); //hapus data mahasiswa
         return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus.');
